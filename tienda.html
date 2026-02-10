@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spider-Shop</title>
+
+  <link rel="stylesheet" href="./CSS/tienda-styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./Imagenes/icon.png">
+</head>
+
+<body>
+  <header class="topbar">
+    
+  <div class="topbar-inner">
+    
+    <div class="brand">
+  <img src="./Imagenes/icon.png" alt="Spider Icon" class="icon">
+  <div class="brand-title">Spider-Shop</div>
+</div>
+
+
+    <div class="cart-box">
+      <button id="cartBtn" class="cart-btn">🛒 <span id="cartBadge">0</span></button>
+
+      <div id="cartPanel" class="cart-panel">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Img</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Cant.</th>
+            </tr>
+          </thead>
+          <tbody id="cartTbody"></tbody>
+        </table>
+
+        <p id="cartEmptyMsg" class="cart-empty">Tu carrito está vacío.</p>
+
+        <div class="cart-footer">
+          <strong>Total: <span id="cartTotal">$0</span></strong>
+          <button id="emptyCartBtn" type="button">Vaciar carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <div class="main-wrapper">
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Bienvenido a Spider-Shop</h1>
+          <p>Productos oficiales y coleccionables: figuras, camisetas, pósters y más. Elige tus favoritos y agrégalos al carrito.</p>
+        </div>
+
+        <img src="./Imagenes/hero-index.jpg" alt="Spider" class="hero-img">
+      </section>
+
+      <section>
+        <h2>TIENDA</h2>
+        <p class="sub">Haz click en “Agregar al carrito” para seleccionar artículos.</p>
+        <div id="productsGrid" class="products-grid"></div>
+      </section>
+
+      <section>
+        <h2>AGREGAR ARTÍCULO</h2>
+        <p class="sub">Crea un nuevo producto (mínimo 6 atributos: nombre, precio, imagen URL y 3 atributos extra).</p>
+
+        <form id="addProductForm" class="form">
+          <input id="nameInput" type="text" placeholder="Nombre" required>
+          <input id="att1Input" type="text" placeholder="Atributo 1" required>
+          <input id="att2Input" type="text" placeholder="Atributo 2" required>
+          <input id="att3Input" type="text" placeholder="Atributo 3" required>
+          <input id="imgInput" type="url" placeholder="URL imagen" required>
+          <input id="priceInput" type="number" placeholder="Precio" min="0" required>
+          <button type="submit">Agregar</button>
+        </form>
+
+        <p class="hint">Regla: si el precio es menor a 1000, no se permite.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>Spider-Shop © 2026</p>
+  </footer>
+
+  <script src="./JS/tienda.js"></script>
+</body>
+</html>
